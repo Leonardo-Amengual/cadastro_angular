@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="center">
     <div fxLayout="column" fxFlex="900px">
-        <form class="mt-60" #clientesFrm="ngForm">
+        <form class="mt-60" #clientesFrm="ngForm" (ngSubmit)="salvar()">
             <mat-card>
                 <mat-card-header>
                     <mat-card-title>Dados Pessoais</mat-card-title>
@@ -10,7 +10,8 @@
                         <div fxLayout="column" fxFlex="800px">
                             <mat-form-field class="full-width">
                                 <mat-label>Nome: *</mat-label>
-                                <input type="text" placeholder="Ex: Leonardo Amengual" matInput />
+                                <input type="text" [(ngModel)]="cliente.nome" name="nome"
+                                    placeholder="Ex: Leonardo Amengual" matInput />
                             </mat-form-field>
                         </div>
                     </div>
@@ -19,7 +20,8 @@
                         <div fxLayout="column" fxFlex="800px">
                             <mat-form-field class="full-width">
                                 <mat-label>E-mail: *</mat-label>
-                                <input type="email" placeholder="leonardo@examplo.com" matInput />
+                                <input type="email" [(ngModel)]="cliente.email" name="email"
+                                    placeholder="leonardo@examplo.com" matInput />
                             </mat-form-field>
                         </div>
                     </div>
@@ -28,7 +30,8 @@
                         <div fxLayout="column" fxFlex="400px">
                             <mat-form-field class="full-width">
                                 <mat-label>CPF: *</mat-label>
-                                <input type="number" placeholder="123.456.789.12" matInput />
+                                <input type="text" [(ngModel)]="cliente.cpf" name="cpf" placeholder="123.456.789.12"
+                                    matInput />
                             </mat-form-field>
                         </div>
                     </div>
@@ -37,13 +40,14 @@
                         <div fxLayout="column" fxFlex="400px">
                             <mat-form-field class="full-width">
                                 <mat-label>Data De Nascimento: *</mat-label>
-                                <input type="text" placeholder="24/11/2000" matInput />
+                                <input type="text" [(ngModel)]="cliente.dataNascimento" name="dataNascimento"
+                                    placeholder="24/11/2000" matInput />
                             </mat-form-field>
                         </div>
                     </div>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-flat-button color="accent">
+                    <button mat-flat-button color="accent" type="submit">
                         <mat-icon fontIcon="save"></mat-icon>
                         Salvar
                     </button>
