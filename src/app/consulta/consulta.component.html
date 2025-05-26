@@ -24,3 +24,45 @@
         </mat-card>
     </div>
 </div>
+
+<div fxLayout="row" fxLayoutAlign="center" class="mt-20">
+    <div fxLayout="column" fxFlex="1000px">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Resultado</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table mat-table [dataSource]="listaCliente">
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef>id</th>
+                        <td mat-cell *matCellDef="let Cliente">{{ Cliente.id }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="nome">
+                        <th mat-header-cell *matHeaderCellDef>Nome</th>
+                        <td mat-cell *matCellDef="let Cliente">{{ Cliente.nome }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="cpf">
+                        <th mat-header-cell *matHeaderCellDef>CPF</th>
+                        <td mat-cell *matCellDef="let Cliente">{{ Cliente.cpf }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="dataNascimento">
+                        <th mat-header-cell *matHeaderCellDef>Data De Nascimento</th>
+                        <td mat-cell *matCellDef="let Cliente">{{ Cliente.dataNascimento }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef>E-mail</th>
+                        <td mat-cell *matCellDef="let Cliente">{{ Cliente.email }}</td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="colunasTable"></tr>
+                    <tr mat-row *matRowDef="let row; columns: colunasTable"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
