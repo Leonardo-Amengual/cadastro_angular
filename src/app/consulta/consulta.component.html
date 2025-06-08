@@ -61,12 +61,24 @@
                     </ng-container>
 
                     <ng-container matColumnDef="acoes">
-                        <th mat-header-cell *matHeaderCellDef></th>
+                        <th mat-header-cell *matHeaderCellDef>Ação</th>
                         <td mat-cell *matCellDef="let Cliente">
                             <button type="button" mat-button (click)="preparaEditar(Cliente.id)">
                                 <mat-icon fontIcon="edit"></mat-icon>
                                 Editar
                             </button>
+
+                            @if (!deletando) {
+                            <button type="button" mat-button (click)="preparaDeletar()">
+                                <mat-icon fontIcon="delete"></mat-icon>
+                                Deletar
+                            </button>
+                            } @else {
+                            <button type="button" mat-button (click)="deletar(Cliente)">
+                                <mat-icon fontIcon="question_mark"></mat-icon>
+                                Confirmar
+                            </button>
+                            }
                         </td>
                     </ng-container>
 
