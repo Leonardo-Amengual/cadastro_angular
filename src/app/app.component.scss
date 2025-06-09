@@ -1,3 +1,27 @@
 .spacer {
     flex: 1 1 auto;
 }
+
+.botao-custom {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: black;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.botao-custom mat-icon {
+    color: black;
+    margin-right: 4px;
+    transition: color 0.3s;
+}
+
+.botao-custom:hover {
+    background-color: white;
+    color: black;
+}
+
+.botao-custom:hover mat-icon {
+    color: black;
+}

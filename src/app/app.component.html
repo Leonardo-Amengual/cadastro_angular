@@ -1,11 +1,15 @@
 <mat-toolbar color="accent">
   <span>Cadastro de clientes</span>
   <span class="spacer"></span>
-  <a routerLink="/cadastro">
-    <mat-icon fontIcon="feed"></mat-icon>
-    Formulario</a>
-  <a routerLink="/consulta">
-    <mat-icon fontIcon="search"></mat-icon>
-    Consulta</a>
+
+  <button mat-button class="botao-custom" routerLink="/cadastro">
+    <mat-icon>feed</mat-icon>
+    Formulário
+  </button>
+
+  <button mat-button class="botao-custom" routerLink="/consulta">
+    <mat-icon>search</mat-icon>
+    Consulta
+  </button>
 </mat-toolbar>
 <router-outlet></router-outlet>
